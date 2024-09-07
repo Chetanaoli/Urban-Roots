@@ -34,22 +34,22 @@ export class ProfileComponent  implements OnInit {
     this.loadProfile();
   }
 
-  async loadProfile() {
+   async loadProfile() {
     if (this.authService?.currentUser) {
       this.profile.email = this.authService?.currentUser?.email;
-
+      try {
+        const userId = this.authService.currentUser.id;
+        this.profile = await this.supabaseService.getProfileById(userId);
+        console.log('this.profile ', this.profile );
+        
+      } catch (error) {
+        console.error('Error loading profile:', error);
+        alert('Failed to load profile.');
+      } finally {
+        this.isLoading = false;
+      }
     }
-    try {
-      const userId = this.authService.currentUser.id;
-      this.profile = await this.supabaseService.getProfileById(userId);
-      console.log('this.profile ', this.profile );
-      
-    } catch (error) {
-      console.error('Error loading profile:', error);
-      alert('Failed to load profile.');
-    } finally {
-      this.isLoading = false;
-    }
+   
   }
 
   async updateProfile() {
