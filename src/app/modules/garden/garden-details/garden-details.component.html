@@ -1,0 +1,47 @@
+<div class="flex h-screen bg-gray-900 text-white">
+    <main class="flex-1 px-32 p-6 bg-gray-800"> <!-- Adjust px for spacing -->
+        <div class="mb-6 flex items-center justify-start">
+            <button onclick="window.history.back()" class="mt-4 text-gray-600 font-bold py-2 px-2 rounded flex items-center"> 
+                <i class="fas fa-arrow-left"></i> 
+            </button>
+            <h1 class="text-3xl mt-2 ml-2 font-bold text-gray-600">Garden Details</h1>
+        </div>
+
+
+        <div class="w-1/2 pr-6">
+            <h2 class="text-2xl font-bold mb-4">Garden Images</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div *ngFor="let imgUrl of garden.imageurls" class="relative">
+                    <img [src]="imgUrl" alt="Garden Image" class="h-48 w-full object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Garden Info Section -->
+        <div class="w-1/2 pl-6 mt-5">
+            <h2 class="text-3xl font-bold mb-2">Garden Name:{{ garden.name }}</h2>
+            <p class="text-gray-400 mb-4">About :{{ garden.description }}</p>
+            <div class="mb-2">
+                <span class="font-semibold">Square Footage:</span> {{ garden.sqft }} sqft
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold">Type:</span> {{ garden.type | titlecase }}
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold">Address:</span> {{ garden.address }}
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold">Created By:</span> {{ garden.createdbyusername }} ({{ garden.createdbyemail }})
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold">Created At:</span> {{ garden.created_at | date:'medium' }}
+            </div>
+            <div class="mb-2">
+                <span class="font-semibold">Updated At:</span> {{ garden.updated_at | date:'medium' }}
+            </div>
+            <div>
+                <span class="font-semibold">Location:</span> {{ garden.latitude }}, {{ garden.longitude }}
+            </div>
+        </div>
+
+    </main>

@@ -1,0 +1,35 @@
+<div class="bg-gray-900 text-white min-h-screen p-6">
+  <button onclick="window.history.back()" class="mt-4 text-gray-600 font-bold py-2 px-2 rounded flex items-center"> 
+    <i class="fas fa-arrow-left"></i> 
+    Back
+</button>
+    <h1 class="text-3xl mb-4">{{ isEditing ? 'Edit Resource' : 'Create Resource' }}</h1>
+    <form (ngSubmit)="saveResource()">
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium ext-white">Resource Name</label>
+        <input id="name" [(ngModel)]="resource.name" name="name" required class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"/>
+      </div>
+      <div class="mb-4">
+        <label for="rent_price" class="block text-sm font-medium ext-white">Rent Price</label>
+        <input id="rent_price" type="number" [(ngModel)]="resource.rent_price" name="rent_price" required class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"/>
+      </div>
+      <div class="mb-4">
+        <label for="rental_period" class="block text-sm font-medium ext-white">Rental Period</label>
+        <select id="rental_period" [(ngModel)]="resource.rental_period" name="rental_period" class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200">
+          <option value="per day">Per Day</option>
+          <option value="per hour">Per Hour</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium ext-white">Image Upload</label>
+        <input type="file" (change)="onImageSelected($event)" class="mt-2 p-2 border border-gray-300 rounded-lg w-full focus:ring focus:ring-green-200"/>
+      </div>
+      <div class="mb-4">
+        <label for="category" class="block text-sm font-medium ext-white">Category</label>
+        <input id="category" [(ngModel)]="resource.category" name="category" class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200" required/>
+      </div>
+      <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        {{ isEditing ? 'Update Resource' : 'Create Resource' }}
+      </button>
+    </form>
+  </div>

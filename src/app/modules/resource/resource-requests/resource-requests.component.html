@@ -1,0 +1,10 @@
+<div class="bg-gray-900 text-white min-h-screen p-6">
+    <h1 class="text-3xl mb-4">Resource Requests</h1>
+    <div *ngIf="requests.length === 0" class="text-gray-400">No requests available.</div>
+    <div *ngFor="let request of requests" class="p-4 bg-gray-800 rounded mb-4">
+      <h2 class="text-xl">{{ request.resource_name }}</h2>
+      <p class="text-gray-400">Requested by: {{ request.requester_name }}</p>
+      <p class="text-gray-400">Status: {{ request.request_status }}</p>
+      <!-- Additional interaction for chat and deals -->
+    </div>
+  </div>
