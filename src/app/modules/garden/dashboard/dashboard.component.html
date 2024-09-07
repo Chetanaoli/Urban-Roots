@@ -1,0 +1,92 @@
+<div class="flex bg-gray-900 h-screen text-white">
+  <main class="flex-1 p-6 bg-gray-800 overflow-hidden">
+    <app-header [activeNavItem]="'gardens'"></app-header>
+    
+    <div class="flex flex-col lg:flex-row gap-4 p-4">
+      <!-- Left Column: Gardens + Buttons -->
+      <div class="lg:w-1/2 w-full flex flex-col gap-4">
+        <!-- Row 1: Nearby Gardens -->
+        <div class="bg-gray-700 rounded-lg p-4 flex-1 overflow-y-auto" style="max-height: 400px;">
+          <div *ngIf="geoService.gardens">
+            <h2 class="text-xl font-bold text-white mb-2">Nearby Gardens</h2>
+            <p class="text-gray-400 text-sm mb-4">Gardens Found: {{ geoService.gardens.length }}</p>
+
+            <div *ngIf="geoService.gardens.length === 0" class="text-gray-500 text-center">No gardens available nearby.</div>
+
+            <!-- Grid layout for garden cards -->
+            <div *ngIf="geoService.gardens.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <ng-container *ngFor="let garden of geoService.gardens.slice(0, 6)">
+                <div class="bg-gray-800  rounded-lg p-4 flex flex-col">
+                  <img 
+                    [src]="garden.imageurls[0]" 
+                    alt="{{ garden.name }}" 
+                    class="w-full h-32 object-cover rounded-md mb-3" 
+                  />
+                  <div class="flex flex-col flex-1">
+                    <h3 class="font-bold text-white mb-1 line-clamp-1">{{ garden.name }}</h3>
+                    <p class="text-gray-400 text-sm">{{ garden.createdbyusername }} - {{ garden.type }} - {{ garden.sqft }} sqft</p>
+                    <p class="text-gray-400 text-sm line-clamp-1">{{ garden.address }}</p>
+                    <p class="text-gray-400 text-sm">Created on: {{ garden.created_at | date:'medium' }}</p>
+                  </div>
+                  <div class="flex justify-between mt-3">
+                    <button class="text-gray-300 hover:text-white">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                    <a [routerLink]="['/garden/', garden.id]" class="text-blue-400 hover:underline">
+                      <i class="fas fa-eye"></i> View Garden
+                    </a>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Buttons -->
+        <div class="flex gap-2 mt-4 bg-gray-700 rounded-lg p-4 flex-wrap">
+
+          <button [routerLink]="['/garden/manage-garden']"  class="flex-grow bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">My Garden</button>
+          <button [routerLink]="['/garden/upload-garden']" class="flex-grow bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">Add Garden</button>
+        </div>
+      </div>
+      
+      <!-- Right Column: Filters + Map -->
+      <div class="lg:w-1/2 w-full flex flex-col gap-4">
+        <!-- Row 1: Filters -->
+        <div class="bg-gray-800 p-4 rounded-lg flex flex-col lg:flex-row justify-between items-center">
+          <span class="text-white font-bold mr-3">Filters</span>
+
+          <div class="flex flex-col lg:flex-row gap-4 mt-4 lg:mt-0 w-full">
+
+            <div class="flex-grow">
+              <label for="radius" class="block text-sm font-medium text-gray-300">Radius (km)</label>
+              <div class="flex items-center mt-1 overflow-x-auto"> <!-- Horizontal scrolling-->
+                <button *ngFor="let radiusOption of radiusOptions" (click)="onRadiusChange(radiusOption)"
+                  [ngClass]="{'bg-blue-500': filter.distance === radiusOption, 'bg-gray-600': filter.distance !== radiusOption}"
+                  class="text-white font-bold py-1 px-3 rounded mr-2">{{ radiusOption }}km</button>
+              </div>
+            </div>
+            
+            <div class="flex-grow">
+              <label for="type" class="block text-sm font-medium text-gray-300">Type</label>
+              <select id="type" name="type" [(ngModel)]="filter.category" (change)="onCategoryChange()"
+                class="mt-1 p-2 border border-gray-600 rounded-md w-full bg-gray-700 text-white">
+                <option value="">All</option>
+                <option value="community">Community</option>
+                <option value="private">Private</option>
+              </select>
+            </div>
+            <button (click)="applyFilters()" class="bg-blue-500 lg:mt-5 hover:bg-blue-700 h-[40px] mt-5 text-white font-bold py-1 px-3 rounded md:mt-0">
+              Apply Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Row 2: Map -->
+        <div class="rounded-lg overflow-hidden border border-gray-700 flex-1">
+          <div id="map" class="rounded-lg overflow-hidden border border-gray-700 h-full" style="height: 350px;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

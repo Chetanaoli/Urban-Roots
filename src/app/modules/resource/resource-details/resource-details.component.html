@@ -1,0 +1,25 @@
+<div class="bg-gray-900 text-white min-h-screen p-6">
+  <button onclick="window.history.back()" class="mt-4 text-gray-600 font-bold py-2 px-2 rounded flex items-center"> 
+    <i class="fas fa-arrow-left"></i> 
+    Back
+</button>
+    <h1 class="text-3xl mb-4">{{ resource?.name }}</h1>
+    <img [src]="resource?.image_url" alt="Resource Image" class="w-full h-48 object-cover rounded-lg mb-4">
+    <p class="text-gray-400 mb-4">Rent Price: ${{ resource?.rent_price }} {{ resource?.rental_period }}</p>
+    <p class="text-gray-400 mb-4">Category: {{ resource?.category }}</p>
+    <p class="text-gray-400 mb-4">OwnedBy: {{ userNamesMap[resource?.created_by_uid] || 'Loading...' }}
+
+    <!-- <p *ngIf="supabaseService" class="text-gray-400 mb-4">Owned by:   {{ supabaseService.getUsername(resource?.created_by_uid) | async }} </p> -->
+    <p class="text-gray-400 mb-4">Availability Status: {{ resource?.availability_status ? 'Available' : 'Not Available' }}</p>
+  
+    <h2 class="text-xl mb-2">Comments</h2>
+    <div *ngFor="let comment of comments" class="bg-gray-800 p-4 rounded mb-2">
+      <p class="text-gray-300">{{ comment.content }}</p>
+      <p class="text-sm text-gray-500">{{ comment.created_at | date:'medium' }}</p>
+      <p class="text-gray-400 mb-4">User: {{ userNamesMap[resource?.created_by_uid] || 'Loading...' }}
+
+    </div>
+  
+    <textarea [(ngModel)]="newComment" placeholder="Add a comment..." class="p-2 border rounded-md w-full bg-gray-700 text-white"></textarea>
+    <button (click)="addComment()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Submit Comment</button>
+  </div>

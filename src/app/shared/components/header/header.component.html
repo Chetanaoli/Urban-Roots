@@ -1,0 +1,78 @@
+<header
+  id="home"
+  class="flex flex-col w-full px-9 pt-8 pb-16 overflow-hidden bg-gray-800 max-md:px-5 max-md:max-w-full"
+>
+  <nav
+    class="flex flex-wrap items-center justify-between w-full gap-5 px-4 py-4 bg-neutral-200 rounded-[53px] max-md:px-5 max-md:max-w-full"
+  >
+    <a
+      href="/"
+      class="flex items-center px-8 py-3 text-1xl font-extrabold text-gray-800 bg-white rounded-[36px] max-md:px-5"
+    >
+      <img
+        loading="lazy"
+        src="./../../assets/logoblack.png"
+        alt="UrbanRoots Logo"
+        class="object-contain shrink-0"
+      />
+    </a>
+    <button class="block md:hidden" (click)="isMenuOpen = !isMenuOpen">
+      <svg
+        class="w-8 h-8 text-gray-800"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+    <div [ngClass]="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }" class="w-full md:flex md:w-auto">
+      <ul class="flex flex-col md:flex-row items-center gap-10 my-auto text-1xl font-bold text-black max-md:max-w-full">
+        <li
+          *ngFor="let navItem of navItems"
+          class="relative group self-stretch"
+        >
+          <a
+            (click)="onNavItemClicked(navItem)"
+            [ngClass]="{
+              'font-bold text-white bg-gray-800 rounded-[52px]': activeNavItem === navItem.value
+            }"
+            class="flex gap-2 items-center px-4 py-3 rounded-[100px] font-bold cursor-pointer hover:text-white"
+          >
+            <i  [ngClass]="{
+              ' text-white': activeNavItem === navItem.value
+            }" [class]="navItem.icon + ' mr-2'"></i>
+            {{ navItem.label }}
+          </a>
+          <!-- <div
+            *ngIf="navItem.dropdownItems"
+            class="absolute top-full left-0 bg-gray-800 rounded-lg shadow-lg p-2 w-48 z-10 hidden group-hover:block"
+          >
+            <a
+            [ngClass]="{
+              ' text-white': activeNavItem === navItem.value
+            }"
+              *ngFor="let dropdownItem of navItem.dropdownItems"
+              (click)="onDropdownItemClick(dropdownItem)"
+              [routerLink]="dropdownItem.route"
+              class="block px-4 py-2 text-gray-300 hover:bg-white-700 rounded cursor-pointer"
+              >{{ dropdownItem.label }}</a
+            >
+          </div> -->
+        </li>
+        <!-- <li>
+          <a
+            class="px-10 py-5 font-bold text-white bg-gray-800 rounded-[52px] max-md:px-5"
+            >Account</a
+          >
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+</header>

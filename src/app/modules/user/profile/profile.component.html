@@ -1,0 +1,50 @@
+<div class="flex bg-gray-900 text-white">
+    <main class="flex-1 p-6 bg-gray-800">
+      <app-header [activeNavItem]="'account'"></app-header>
+  
+      <div class="mx-4 lg:mx-32 text-white min-h-screen p-6">
+        <h1 class="text-3xl mb-4">User Profile</h1>
+  
+        <!-- Display User Info -->
+        <div class="flex items-center mb-4">
+          <div class="w-16 h-16 rounded-full overflow-hidden border border-gray-700">
+            <img [src]="profile.avatar_url" alt="User Avatar" class="w-full h-full object-cover">
+          </div>
+          <div class="ml-4">
+            <h2 class="text-xl font-bold">{{ profile.full_name }}</h2>
+            <p *ngIf="authService.currentUser" class="text-gray-400">Email: {{ authService.currentUser?.email }}</p>
+            <button (click)="isEditing = true" class="mt-2 text-blue-500 hover:underline">Edit</button>
+          </div>
+        </div>
+  
+        <!-- Editing Form -->
+        <form (ngSubmit)="updateProfile()" *ngIf="isEditing && !isLoading">
+          <div class="mb-4">
+            <label for="full_name" class="block text-sm font-medium ext-white">Full Name</label>
+            <input id="full_name" [(ngModel)]="profile.full_name" name="full_name" required 
+              class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"/>
+          </div>
+  
+          <div *ngIf="selectedImage" class="relative mb-4">
+            <img [src]="getPreviewUrl(selectedImage)" alt="Image Preview" class="h-48 w-full object-cover rounded-lg shadow-lg mb-2">
+            <button type="button" (click)="removeImage()" 
+              class="absolute top-0 right-0 m-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition duration-300">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+  
+          <div class="mb-4">
+            <label class="block text-sm font-medium ext-white">Upload New Image</label>
+            <input type="file" (change)="onImageSelected($event)" 
+              class="mt-2 p-2 border border-gray-300 rounded-lg w-full focus:ring focus:ring-green-200"/>
+          </div>
+  
+          <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            Update Profile
+          </button>
+        </form>
+  
+        <div *ngIf="isLoading" class="text-gray-400">Loading your profile...</div>
+      </div>
+    </main>
+  </div>
