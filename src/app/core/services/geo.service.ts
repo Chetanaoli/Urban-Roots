@@ -301,7 +301,21 @@ export class GeoService implements OnInit {
     this.supaService.getNearbyGardens(lat,long,radius,type).then((res: any)=> {
       console.log('gardens',res);
       this.gardens = res;
-      this.showGardenOnMap(res);
+      
+      if(type !== 'all' ) {
+        const filterGardens = this.gardens.filter((res: any) => {
+          return res.type === type;
+
+        });
+        this.gardens = filterGardens;
+        console.log('type', type);
+        console.log('this.gardens', this.gardens);
+        console.log('filterGardens',filterGardens);
+  
+      }
+    
+ 
+      this.showGardenOnMap(this.gardens);
     })
   }
 
