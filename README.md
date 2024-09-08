@@ -30,7 +30,7 @@ To run the project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/urbanroots.git
+    git clone https://github.com/Chetanaoli/Urban-Roots.git
     ```
 
 2. **Install dependencies**:
