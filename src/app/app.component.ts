@@ -26,9 +26,11 @@ export class AppComponent implements OnInit  {
       
       if (session) {
         this.authService.setCurrentUser(session.user); 
-        // if (session.user && this.router.url === '/') {
-        //   this.router.navigate(['/user/dashboard']);
-        // } else {}
+        if (session.user && this.router.url === '/') {
+          this.router.navigate(['/user/dashboard']);
+        } else {
+          this.router.navigate(['/user/login']);
+        }
       }
     });
   }

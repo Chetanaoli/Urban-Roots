@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit, AfterViewInit  {
   constructor(public geoService: GeoService, private supaService: SupabaseService) {}
 
 
-  radiusOptions = [5, 10, 20, 50, 100];
+  radiusOptions = [5, 10,  50, 100];
   filter = { 
     distance: 5 ,
     category: '' as any
