@@ -1,8 +1,5 @@
 # UrbanRoots 🌱
 ![aboutImg](https://github.com/user-attachments/assets/840c8190-d207-44e1-abbe-670e319f461e)
-![logo](https://github.com/user-attachments/assets/5fa80c8f-a3a1-4f24-98de-ca34624cf30a)
-![Group 512284](https://github.com/user-attachments/assets/a0874f31-0dfe-4ab8-88e7-8e25dfc67063)
-
 UrbanRoots is a community-driven platform that encourages urban gardening and sustainability. It allows users to create and manage gardens, share resources, and participate in discussions about eco-friendly practices. Built with Angular, Supabase, and Vercel, the platform promotes sustainable software development and green hosting.
 
 ## Features ✨
