@@ -1,0 +1,207 @@
+<header id="home" class="flex flex-col w-full px-9 pt-8 pb-16 overflow-hidden bg-gray-800 max-md:px-5 max-md:max-w-full">
+  <nav class="flex flex-wrap items-center justify-between w-full gap-5 px-7 py-7 bg-neutral-200 rounded-[53px] max-md:px-5 max-md:max-w-full">
+    <a href="/" class="flex items-center px-8 py-3 text-2xl font-extrabold text-gray-800 bg-white rounded-[36px] max-md:px-5">
+      <img loading="lazy" src="./../../assets/logoblack.png" alt="UrbanRoots Logo" class="object-contain shrink-0" />
+    </a>
+    <button class="block md:hidden" (click)="isMenuOpen = !isMenuOpen">
+      <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <div [ngClass]="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }" class="w-full md:flex md:w-auto">
+      <ul class="flex flex-col md:flex-row items-center gap-10 my-auto text-2xl font-bold text-black max-md:max-w-full">
+        <li><a href="#home" class="self-stretch">Accueil</a></li>
+        <li><a href="#about" class="self-stretch">À propos</a></li>
+        <li><a href="#contact" class="self-stretch">Contact</a></li>
+        <li>
+          <button (click)="getStarted()" class="px-10 py-5 font-bold text-white bg-gray-800 rounded-[52px] max-md:px-5">
+            Commencer
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Rest of your sections -->
+  <section  class="w-full max-w-[1314px] mt-28 self-center max-md:mt-10 max-md:max-w-full">
+    <div class="flex gap-5 max-md:flex-col">
+      <div class="flex flex-col w-[59%] max-md:w-full">
+        <div class="flex flex-col items-start mt-9 text-white font-extrabold max-md:mt-10">
+          <h1 class="text-5xl font-normal leading-[68px] max-md:text-4xl max-md:leading-[59px]">
+            Cultiver des <br> communautés vertes ensemble avec
+          </h1>
+          <div class="z-10 text-8xl font-bold leading-none max-md:text-4xl">UrbanRoots</div>
+          <a href="#" (click)="getStarted()" btn class="px-10 py-5 mt-7 text-3xl font-medium text-gray-800 bg-white rounded-[52px] max-md:px-5">
+            Commencer
+          </a>  
+        </div>
+      </div>
+      <div class="flex flex-col w-[41%] ml-5 max-md:ml-0 max-md:w-full">
+        <img loading="lazy" src="./../../assets/image 59.png" alt="Urban garden illustration" class="object-contain w-full aspect-[1.01] rounded-[40px] max-md:mt-10 max-md:max-w-full" />
+      </div>
+    </div>
+  </section>
+
+
+</header>
+
+
+
+<main>
+
+  <!-- <div class="flex flex-col w-full px-9 pt-8 pb-16 overflow-hidden bg-gray-800 max-md:px-5 max-md:max-w-full">
+    <section  class="w-full max-w-[1314px] mt-28 self-center max-md:mt-10 max-md:max-w-full">
+      <div class="flex gap-5 max-md:flex-col">
+        <div class="flex flex-col w-[59%] max-md:w-full">
+          <div class="flex flex-col items-start mt-9 text-white font-extrabold max-md:mt-10">
+            <h1 class="text-5xl font-normal leading-[68px] max-md:text-4xl max-md:leading-[59px]">
+              Cultivating Green <br> Communities Together with
+            </h1>
+            <div class="z-10 text-8xl font-bold leading-none max-md:text-4xl">UrbanRoots</div>
+            <a href="#" (click)="getStarted()" btn class="px-10 py-5 mt-7 text-3xl font-medium text-gray-800 bg-white rounded-[52px] max-md:px-5">
+              Get Started
+            </a>  
+          </div>
+        </div>
+        <div class="flex flex-col w-[41%] ml-5 max-md:ml-0 max-md:w-full">
+          <img loading="lazy" src="./../../assets/image 59.png" alt="Urban garden illustration" class="object-contain w-full aspect-[1.01] rounded-[40px] max-md:mt-10 max-md:max-w-full" />
+        </div>
+      </div>
+    </section>
+  </div> -->
+
+
+  <section id="about" class="flex flex-col items-center justify-center w-full px-20 py-28 text-black bg-white overflow-hidden max-md:px-5 max-md:py-24 max-md:max-w-full">
+    <div class="flex flex-col items-center w-full max-w-[1142px] max-md:max-w-full">
+      <h2 class="text-7xl font-extrabold leading-none max-md:text-4xl">À propos de nous</h2>
+      <p class="mt-7 text-4xl leading-10 text-center max-md:max-w-full">
+        Chez UrbanRoots, nous croyons au pouvoir du jardinage urbain pour transformer les villes en espaces plus verts et plus durables. Notre plateforme favorise la collaboration communautaire, l'éco-responsabilité et l'innovation, créant un espace partagé où les jardiniers urbains peuvent se connecter, apprendre et grandir ensemble.</p>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ad7f954e0e2d7dc0992521c85352b5bfb2971fe26b24abb556934774388c0f5?placeholderIfAbsent=true&apiKey=abd88b4a4ac845fa97d5ab140e241bf7" alt="UrbanRoots icon" class="object-contain mt-14 w-[170px] aspect-[0.92] max-md:mt-10" />
+    </div>
+  </section>
+
+  <section class="flex overflow-hidden flex-col justify-center items-center px-20 py-24 w-full bg-gray-800 max-md:px-5 max-md:pt-24 max-md:max-w-full">
+    <div class="flex flex-col w-full max-w-[1333px] max-md:max-w-full">
+      <h2 class="self-center text-7xl font-extrabold leading-none text-white max-md:max-w-full max-md:text-4xl">
+        Ce que nous offrons
+      </h2>
+      <div class="mt-24 max-md:mt-10 max-md:max-w-full">
+        <div class="flex gap-5 max-md:flex-col">
+          <article class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow pt-9 pb-28 w-full text-white rounded-3xl bg-white bg-opacity-20 max-md:pb-24 max-md:mt-7 max-md:max-w-full">
+              <img loading="lazy" src="./../../assets/material-symbols_map.png" alt="Interactive Garden Map icon" class="object-contain self-end mr-9 w-16 aspect-square max-md:mr-2.5" />
+              <div class="flex flex-col px-16 mt-2.5 max-md:px-5 max-md:max-w-full">
+                <h3 class="text-3xl font-extrabold leading-10 w-[241px]">Carte interactive des jardins</h3>
+                <p class="mt-5 text-2xl leading-8">
+                  Trouvez, créez et contribuez aux espaces de jardinage urbain dans votre quartier.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow pt-10 pb-28 w-full text-white rounded-3xl bg-white bg-opacity-20 max-md:pb-24 max-md:mt-7 max-md:max-w-full">
+              <img loading="lazy" src="./../../assets/Vector.png"  alt="Resource Sharing Platform icon" class="object-contain self-end mr-9 aspect-[0.94] w-[47px] max-md:mr-2.5" />
+              <div class="flex flex-col px-14 mt-5 max-md:px-5 max-md:max-w-full">
+                <h3 class="text-3xl font-extrabold leading-10 w-[254px]">Plateforme de partage de ressources</h3>
+                <p class="mt-5 text-2xl leading-8">
+                  Échangez des graines, des outils et des conseils de jardinage avec d'autres jardiniers.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow py-12 w-full text-white rounded-3xl bg-white bg-opacity-20 max-md:mt-7 max-md:max-w-full">
+              <img loading="lazy" src="./../../assets/Vector (1).png" alt="Community Forums icon" class="object-contain self-end mr-7 aspect-[0.98] w-[50px] max-md:mr-2.5" />
+              <div class="flex flex-col px-14 mt-5 max-md:px-5 max-md:max-w-full">
+                <h3 class="text-3xl font-extrabold leading-10">Forums communautaires</h3>
+                <p class="mt-5 text-2xl leading-8">
+                  Participez à des discussions, partagez vos expériences et organisez des événements locaux avec d'autres passionnés de jardinage urbain.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="px-20 py-20 mt-32 bg-white rounded-3xl max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <div class="flex gap-5 max-md:flex-col">
+      <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col mt-3 max-md:mt-10 max-md:max-w-full">
+          <h2 class="self-start text-6xl font-extrabold text-black max-md:text-4xl">Contactez-nous</h2>
+
+        </div>
+      </div>
+
+   <div id="contact"  class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+    <address class="flex flex-col pl-2 mt-16 w-full max-md:mt-10 max-md:max-w-full not-italic">
+      <p class="flex items-center gap-5 text-2xl font-normal leading-[45px]">
+        <img loading="lazy" src="./../../assets/Mail.png" alt="Email Icon" class="object-contain w-8 aspect-square" />
+        urbanroots&#64;example.com
+      </p>
+      <p class="flex items-center gap-5 text-2xl font-normal leading-[45px]">
+        <img loading="lazy" src="./../../assets/Phone (1).png" alt="Phone Icon" class="object-contain w-8 aspect-square" />
+        +123 456 7890
+      </p>
+      <p class="flex items-center gap-5 text-2xl font-normal leading-[45px]">
+        <img loading="lazy" src="./../../assets/Map pin.png" alt="Location Icon" class="object-contain w-8 aspect-square" />
+        123 Garden St, Green City, Earth
+      </p>
+    </address>
+  <!-- <div class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+    <h3 class="self-start text-2xl text-gray-800 mb-6">Send us your enquiry!</h3>
+    <form class="flex flex-col w-full max-md:max-w-full gap-4">
+      <div class="flex gap-4 max-md:flex-col">
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Your message"
+        class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+        rows="4"
+      ></textarea>
+      <button
+        type="submit"
+        class="w-full py-3 text-white font-semibold bg-gray-800 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        Submit
+      </button>
+    </form>
+  </div> -->
+</div>
+
+
+    </div>
+  </section>
+
+
+
+</main>
+<footer class="flex flex-col justify-center items-center px-16 py-7 w-full text-lg leading-loose text-gray-800 border-t bg-neutral-200 border-white border-opacity-10 max-md:px-5 max-md:max-w-full">
+  <div class="flex flex-wrap gap-5 justify-between w-full max-w-[1335px] max-md:max-w-full">
+    <p class="my-auto">Copyright © 2024 UrbanRoots | Powered by DC - Paris.</p>
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c2bad11fb109e220f13dd3f97e4f9ca306b7bc5be271e7d4040bb7c686bccc4?placeholderIfAbsent=true&apiKey=abd88b4a4ac845fa97d5ab140e241bf7" alt="UrbanRoots footer logo" class="object-contain shrink-0 max-w-full aspect-[6.33] w-[190px]" />
+  </div>
+</footer>
