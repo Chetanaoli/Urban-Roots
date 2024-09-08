@@ -1,31 +1,56 @@
-<<<<<<< HEAD
-# Urban-Roots
-=======
-# Urbanroots2
+# UrbanRoots 🌱
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+UrbanRoots is a community-driven platform that encourages urban gardening and sustainability. It allows users to create and manage gardens, share resources, and participate in discussions about eco-friendly practices. Built with Angular, Supabase, and Vercel, the platform promotes sustainable software development and green hosting.
 
-## Development server
+## Features ✨
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **User Registration & Authentication**: Secure login with email using Supabase Auth.
+- **Create & Manage Gardens**: Users can create, edit, and manage their urban gardens.
+- **Resource Sharing**: Share and borrow gardening tools within the community.
+- **Community Forums**: Participate in discussions and share eco-friendly gardening tips.
+- **Real-Time Updates**: Stay updated with real-time notifications for new gardens, resources, and forum posts.
 
-## Code scaffolding
+## Tech Stack 🛠️
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend**: Angular with lazy loading and optimized components for efficient performance.
+- **Backend**: Supabase (PostgreSQL, Auth, and Storage).
+- **Hosting**: Vercel, featuring edge computing and serverless functions for scalability and reduced environmental impact.
+- **Mapping**: OpenLayers for interactive garden mapping.
 
-## Build
+## Sustainable Practices ♻️
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Lazy Loading & Tree-Shaking**: Improves performance and reduces energy consumption.
+- **Green Hosting**: Vercel’s edge computing reduces server load and carbon emissions.
+- **Eco-Education**: Educational content on sustainable urban gardening practices.
 
-## Running unit tests
+## Installation 🛠️
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run the project locally:
 
-## Running end-to-end tests
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/urbanroots.git
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Further help
+3. **Configure Supabase**:
+   - Set up a Supabase project and configure environment variables for authentication and database connections.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
->>>>>>> master
+4. **Run the application**:
+    ```bash
+    ng serve
+    ```
+
+5. **Open in browser**:
+    - Navigate to `http://localhost:4200/`.
+
+
+---
+
+## Contact 📧
+
+For any inquiries or feedback, reach out at **chetanaoli577@gmail.com**.
