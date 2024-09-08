@@ -1,20 +1,20 @@
 <div class="bg-gray-900 text-white min-h-screen p-6">
   <button onclick="window.history.back()" class="mt-4 text-gray-600 font-bold py-2 px-2 rounded flex items-center"> 
     <i class="fas fa-arrow-left"></i> 
-    Back
+    Retour
 </button>
     <h1 class="text-3xl mb-4">{{ isEditing ? 'Edit Topic' : 'Create Topic' }}</h1>
     <form (ngSubmit)="saveTopic()">
       <div class="mb-4">
-        <label for="topic_name" class="block text-sm font-medium ext-white">Topic Name</label>
+        <label for="topic_name" class="block text-sm font-medium ext-white">Nom du sujet</label>
         <input id="topic_name" [(ngModel)]="topic.topic_name" name="topic_name" required class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"/>
       </div>
       <div class="mb-4">
-        <label for="content" class="block text-sm font-medium ext-white">Content</label>
+        <label for="content" class="block text-sm font-medium ext-white">Contenu</label>
         <textarea id="content" [(ngModel)]="topic.content" name="content" rows="6" required class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"></textarea>
       </div>
       <div class="mb-4">
-        <label class="block text-sm font-medium ext-white">Image Upload</label>
+        <label class="block text-sm font-medium ext-white">Ajouter une image</label>
         <input type="file" (change)="onImageSelected($event)" class="mt-2 p-2 border border-gray-300 rounded-lg w-full focus:ring focus:ring-green-200"/>
       </div>
       <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
