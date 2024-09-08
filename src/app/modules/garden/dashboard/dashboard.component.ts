@@ -97,7 +97,7 @@ export class DashboardComponent implements OnInit, AfterViewInit  {
     const lat = 17.5196 ;
     const long = 78.4468;
     const type = 'public'
-
+   this.filter.category = 'all';
   }
 
   ngAfterViewInit() {
@@ -124,7 +124,12 @@ export class DashboardComponent implements OnInit, AfterViewInit  {
   }
 
   onCategoryChange() {
-    // You can also perform any additional logic when the selection changes
+     if ( this.filter.category === '') {
+      this.filter.category = 'all';
+      return
+    }
+    this.filter.category = this.filter.category;
+  
     console.log('Selected category:', this.filter.category);
   }
 
