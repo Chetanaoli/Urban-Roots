@@ -5,7 +5,7 @@ import { AuthService } from '../../../core/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -27,7 +27,8 @@ export class ProfileComponent  implements OnInit {
 
   constructor(
     private supabaseService: SupabaseService,
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -88,5 +89,11 @@ export class ProfileComponent  implements OnInit {
   removeImage(): void {
     this.selectedImage = null;
   }
+
+    logout() {
+    this.authService.logout();
+    this.router.navigate(['/user/login']);
+  }
+
 
 }
