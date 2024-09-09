@@ -20,6 +20,7 @@
     "@angular/router": "^18.2.0",
     "@supabase/supabase-js": "^2.45.3",
     "angular-font-awesome": "^3.1.2",
+    "browser-image-compression": "^2.0.2",
     "ol": "^10.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
