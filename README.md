@@ -18,6 +18,11 @@ UrbanRoots is a community-driven platform that encourages urban gardening and su
 - **Hosting**: Vercel, featuring edge computing and serverless functions for scalability and reduced environmental impact.
 - **Mapping**: OpenLayers for interactive garden mapping.
 
+## Database Login:
+- For Login go to [Supabase](https://supabase.com/)
+- **ID**: projecturbanroots@gmail.com
+- **Password**: Projecturbanroots@2024
+
 ## Sustainable Practices ♻️
 
 - **Lazy Loading & Tree-Shaking**: Improves performance and reduces energy consumption.
@@ -48,7 +53,6 @@ To run the project locally:
 
 5. **Open in browser**:
     - Navigate to `http://localhost:4200/`.
-
 
 ---
 
