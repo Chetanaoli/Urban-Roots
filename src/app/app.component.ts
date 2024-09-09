@@ -30,6 +30,8 @@ export class AppComponent implements OnInit  {
         } else {
           this.router.navigate(['/user/login']);
         }
+      } else {
+        this.router.navigate(['/']);
       }
     });
   }
