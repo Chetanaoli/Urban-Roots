@@ -23,7 +23,6 @@ export class AppComponent implements OnInit  {
     this.supabase.auth.getSession().then(({ data: { session } }) => {
       console.log('session', session);
       console.log('page', this.router.url );
-      
       if (session) {
         this.authService.setCurrentUser(session.user); 
         if (session.user && this.router.url === '/') {
