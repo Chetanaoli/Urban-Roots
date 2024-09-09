@@ -3,8 +3,8 @@
     <app-header [activeNavItem]="'resources'"></app-header>
 
     <div class="text-white min-h-screen p-6">
-      <h1 class="text-3xl mb-4">Nearby Resources</h1>
-      <div *ngIf="resources.length === 0" class="text-gray-400">No resources available nearby.</div>
+      <h1 class="text-3xl mb-4">Ressources à proximité</h1>
+      <div *ngIf="resources.length === 0" class="text-gray-400">Aucune ressource disponible à proximité</div>
       
       <!-- Resources Grid -->
       <div class="max-h-[70vh] bg-gray-700 p-4 rounded-lg overflow-y-auto">
@@ -15,7 +15,7 @@
             <p class="text-gray-400">Rent Price: ${{ resource.rent_price }} {{ resource.rental_period }}</p>
             <p class="text-gray-400">Category: {{ resource.category }}</p>
             <p class="text-gray-400">Owner: {{ resource.created_by_uid }}</p>
-            <a [routerLink]="['/resource/details', resource.id]" class="text-blue-500 hover:underline">View Details</a>
+            <a [routerLink]="['/resource/details', resource.id]" class="text-blue-500 hover:underline">Voir les détails</a>
           </div>
         </div>
       </div>
@@ -26,12 +26,12 @@
         <a 
           routerLink="/resource/create" 
           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex-grow mr-2">
-          Add Resource
+          Ajouter une ressource
         </a>
         <a 
           routerLink="/resource/manage" 
           class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded flex-grow">
-          My Resources
+          Mes ressources
         </a>
       </div>
     </div>

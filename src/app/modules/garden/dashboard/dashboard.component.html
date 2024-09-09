@@ -9,11 +9,11 @@
         <div class="bg-gray-700 rounded-lg p-4 flex-1 overflow-hidden">
           <div style="height: calc(100vh - 400px - 20px);" class="h-full flex flex-col">
             <div *ngIf="geoService.gardens" class="flex-1 overflow-y-auto">
-              <h2 class="text-xl font-bold text-white mb-2">Nearby Gardens</h2>
+              <h2 class="text-xl font-bold text-white mb-2">Jardins à proximité</h2>
               <p class="text-gray-400 text-sm mb-4">Gardens Found: {{ geoService.gardens.length }}</p>
 
               <div *ngIf="geoService.gardens.length === 0" class="text-gray-500 text-center">
-                No gardens available nearby.
+                Aucun jardin disponible à proximité.
               </div>
 
               <!-- Grid layout for garden cards -->
@@ -32,7 +32,7 @@
                         <i class="fas fa-heart"></i>
                       </button>
                       <a [routerLink]="['/garden/', garden.id]" class="text-blue-400 hover:underline">
-                        <i class="fas fa-eye"></i> View Garden
+                        <i class="fas fa-eye"></i> Vue sur le jardin
                       </a>
                     </div>
                   </div>
@@ -45,10 +45,10 @@
         <!-- Row 2: Buttons -->
         <div class="flex gap-2 mt-4 bg-gray-700 rounded-lg p-4 flex-wrap">
           <button [routerLink]="['/garden/manage-garden']" class="flex-grow bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
-            My Garden
+            Mon jardin
           </button>
           <button [routerLink]="['/garden/upload-garden']" class="flex-grow bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">
-            Add Garden
+            Ajouter un jardin
           </button>
         </div>
       </div>
@@ -87,7 +87,7 @@
               </select>
             </div>
             <button (click)="applyFilters()" class="bg-blue-500 lg:mt-5 hover:bg-blue-700 h-[40px] mt-5 text-white font-bold py-1 px-3 rounded md:mt-0">
-              Apply
+              Appliquer
             </button>
           </div>
         </div>

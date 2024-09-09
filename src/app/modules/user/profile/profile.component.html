@@ -13,17 +13,17 @@
           <div class="ml-4">
             <h2 class="text-xl font-bold">{{ profile.full_name }}</h2>
             <p *ngIf="authService.currentUser" class="text-gray-400">Email: {{ authService.currentUser?.email }}</p>
-            <button (click)="isEditing = true" class="mt-2 text-blue-500 hover:underline">Edit</button>
+            <button (click)="isEditing = true" class="mt-2 text-blue-500 hover:underline">Modifier</button>
           </div>
         </div>
         
        <br>
-        <button (click)="logout()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Logout</button>
+        <button (click)="logout()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Déconnexion</button>
         <br>
         <!-- Editing Form -->
         <form (ngSubmit)="updateProfile()" *ngIf="isEditing && !isLoading">
           <div class="mb-4">
-            <label for="full_name" class="block text-sm font-medium ext-white">Full Name</label>
+            <label for="full_name" class="block text-sm font-medium ext-white">Nom et prénom</label>
             <input id="full_name" [(ngModel)]="profile.full_name" name="full_name" required 
               class="mt-1 p-2 border rounded-md w-full bg-gray-700 text-white focus:ring focus:ring-green-200"/>
           </div>
@@ -37,17 +37,17 @@
           </div>
   
           <div class="mb-4">
-            <label class="block text-sm font-medium ext-white">Upload New Image</label>
+            <label class="block text-sm font-medium ext-white">Télécharger une nouvelle image</label>
             <input type="file" (change)="onImageSelected($event)" 
               class="mt-2 p-2 border border-gray-300 rounded-lg w-full focus:ring focus:ring-green-200"/>
           </div>
   
           <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-            Update Profile
+            Mettre à jour le profil
           </button>
         </form>
   
-        <div *ngIf="isLoading" class="text-gray-400">Loading your profile...</div>
+        <div *ngIf="isLoading" class="text-gray-400">chargement de votre profil...</div>
       </div>
     </main>
   </div>

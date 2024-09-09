@@ -11,11 +11,11 @@
             <i class="fas fa-home text-2xl"></i>
           </a>
 
-          Register</h2>
+          RRegistre</h2>
   
         <form (ngSubmit)="signup()" #registrationForm="ngForm">
           <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+            <label for="name" class="block text-sm font-medium text-gray-300">Nom</label>
             <input 
               type="text" 
               id="name" 
@@ -39,7 +39,7 @@
           </div>
   
           <div class="mb-4">
-            <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
+            <label for="password" class="block text-sm font-medium text-gray-300">mot de passe</label>
             <input 
               type="password" 
               id="password" 
@@ -51,7 +51,7 @@
           </div>
   
           <div class="mb-4">
-            <label for="confirmPassword" class="block text-sm font-medium text-gray-300">Confirm Password</label>
+            <label for="confirmPassword" class="block text-sm font-medium text-gray-300">Confirmez le mot de passe</label>
             <input 
               type="password" 
               id="confirmPassword" 
@@ -65,11 +65,11 @@
           <div *ngIf="error" class="text-red-500 text-sm mt-2">{{ error }}</div>
   
           <button type="submit" [disabled]="!registrationForm.form.valid" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
-            Register
+            Registre
           </button>
   
           <p class="text-center text-gray-300 mt-4">
-            Already have an account? 
+            Vous avez déjà un compte ? 
             <a routerLink="/user/login" class="font-medium text-blue-600 hover:text-blue-500"> Login </a>
           </p>
         </form>

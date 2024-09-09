@@ -8,7 +8,7 @@
             <!-- Back  -->
           </button>
           
-        My Gardens</h1>
+         Mes jardins</h1>
 
       <div *ngIf="gardens.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> <!-- Responsive grid -->
         <ng-container *ngFor="let garden of gardens">
@@ -27,10 +27,10 @@
             </div>
             <div class="flex justify-between mt-3">
               <button (click)="editGarden(garden.id)" class="text-blue-400 hover:underline">
-                Edit
+                Modifier
               </button>
               <button (click)="deleteGarden(garden.id)" class="text-red-400 hover:underline">
-                Delete
+                Supprimer
               </button>
             </div>
           </div>
@@ -38,7 +38,7 @@
       </div>
       
       <div *ngIf="gardens.length === 0" class="text-gray-400">
-        <p>No gardens found.</p>
+        <p>Aucun jardin trouvé.</p>
       </div>
     </main>
   </div>
