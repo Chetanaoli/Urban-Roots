@@ -3,11 +3,11 @@
     <app-header [activeNavItem]="'forum'"></app-header>
 
     <div class="text-white min-h-screen p-6 mb-3">
-      <h1 class="text-3xl mb-4">Forum Topics</h1>
+      <h1 class="text-3xl mb-4">Sujets du forum</h1>
 
       <!-- Forum Topics Grid -->
          <div class="max-h-[70vh] bg-gray-700 rounded-lg p-4 overflow-y-auto">
-          <div *ngIf="topics.length === 0" class="text-gray-400">No topics available.</div>
+          <div *ngIf="topics.length === 0" class="text-gray-400">Aucun sujet disponible.</div>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> <!-- Changed for 4 columns on large screens -->
             <div *ngFor="let topic of topics" class="mb-4 p-4 bg-gray-800 rounded-lg">
               <img 
@@ -28,12 +28,12 @@
         <a 
           routerLink="/forum/create-topic" 
           class="flex-grow bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-          Create Forum
+         Créer un forum
         </a>
         <a 
           routerLink="/forum/manage-topic" 
           class="flex-grow bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-          My Forum
+          Mon forum
         </a>
       </div>
     </div>
