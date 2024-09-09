@@ -8,6 +8,8 @@ import {
   User,
 } from '@supabase/supabase-js';
 import { environment } from '../../../environments/environment';
+import imageCompression from 'browser-image-compression';
+
 export interface Profile {
   id?: string;
   username: string;
@@ -90,10 +92,23 @@ export class SupabaseService {
   // Garden Code
   ////////////////////////////////////////////////
   async uploadImage(file: File) {
+
+      const options = {
+        maxSizeMB: 1,             // Maximum file size in MB
+        maxWidthOrHeight: 1024,   // Maximum width or height in pixels
+        useWebWorker: true,       // Optional: use a web worker for faster compression
+        maxIteration: 10,         // Maximum number of iterations for compression
+        initialQuality: 0.85,     // Initial quality (0.0 to 1.0 range)
+      };
+  
+      // Compress the image
+    const compressedFile = await imageCompression(file, options);
+
+    
     const filePath = `gardens/${file.name}`; // Adjust the path as needed
     const { data, error } = await this.supabase.storage
       .from('gardens')
-      .upload(filePath, file);
+      .upload(filePath, compressedFile);
 
     if (error) {
       throw new Error(`Upload error: ${error.message}`);
