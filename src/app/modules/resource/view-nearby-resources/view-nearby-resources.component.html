@@ -12,7 +12,7 @@
           <div *ngFor="let resource of resources" class="p-4 bg-gray-800 rounded-lg">
             <img [src]="resource.image_url" alt="{{ resource.name }}" class="h-32 w-full object-cover rounded-md mb-3">
             <h2 class="text-xl font-bold">{{ resource.name }}</h2>
-            <p class="text-gray-400">Rent Price: ${{ resource.rent_price }} {{ resource.rental_period }}</p>
+            <p class="text-gray-400">Prix ​​de location: ${{ resource.rent_price }} {{ resource.rental_period }}</p>
             <p class="text-gray-400">Category: {{ resource.category }}</p>
             <p class="text-gray-400">Owner: {{ resource.created_by_uid }}</p>
             <a [routerLink]="['/resource/details', resource.id]" class="text-blue-500 hover:underline">Voir les détails</a>

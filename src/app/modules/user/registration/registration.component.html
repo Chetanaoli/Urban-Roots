@@ -11,7 +11,7 @@
             <i class="fas fa-home text-2xl"></i>
           </a>
 
-          RRegistre</h2>
+          S'inscrire</h2>
   
         <form (ngSubmit)="signup()" #registrationForm="ngForm">
           <div class="mb-4">
@@ -65,12 +65,12 @@
           <div *ngIf="error" class="text-red-500 text-sm mt-2">{{ error }}</div>
   
           <button type="submit" [disabled]="!registrationForm.form.valid" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
-            Registre
+            S'inscrire
           </button>
   
           <p class="text-center text-gray-300 mt-4">
             Vous avez déjà un compte ? 
-            <a routerLink="/user/login" class="font-medium text-blue-600 hover:text-blue-500"> Login </a>
+            <a routerLink="/user/login" class="font-medium text-blue-600 hover:text-blue-500"> Se connecter </a>
           </p>
         </form>
       </div>

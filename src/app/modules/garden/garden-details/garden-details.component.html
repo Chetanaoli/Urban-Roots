@@ -19,28 +19,28 @@
 
         <!-- Garden Info Section -->
         <div class="w-1/2 pl-6 mt-5">
-            <h2 class="text-3xl font-bold mb-2">Garden Name:{{ garden.name }}</h2>
-            <p class="text-gray-400 mb-4">About :{{ garden.description }}</p>
+            <h2 class="text-3xl font-bold mb-2">Nom du jardin :{{ garden.name }}</h2>
+            <p class="text-gray-400 mb-4">À propos:{{ garden.description }}</p>
             <div class="mb-2">
-                <span class="font-semibold">Square Footage:</span> {{ garden.sqft }} sqft
+                <span class="font-semibold">Superficie en pieds carrés:</span> {{ garden.sqft }} sqft
             </div>
             <div class="mb-2">
-                <span class="font-semibold">Type:</span> {{ garden.type | titlecase }}
+                <span class="font-semibold">Taper:</span> {{ garden.type | titlecase }}
             </div>
             <div class="mb-2">
-                <span class="font-semibold">Address:</span> {{ garden.address }}
+                <span class="font-semibold">Adresse:</span> {{ garden.address }}
             </div>
             <div class="mb-2">
-                <span class="font-semibold">Created By:</span> {{ garden.createdbyusername }} ({{ garden.createdbyemail }})
+                <span class="font-semibold">Créé par:</span> {{ garden.createdbyusername }} ({{ garden.createdbyemail }})
             </div>
             <div class="mb-2">
-                <span class="font-semibold">Created At:</span> {{ garden.created_at | date:'medium' }}
+                <span class="font-semibold">Créé à:</span> {{ garden.created_at | date:'medium' }}
             </div>
             <div class="mb-2">
-                <span class="font-semibold">Updated At:</span> {{ garden.updated_at | date:'medium' }}
+                <span class="font-semibold">Mis à jour à:</span> {{ garden.updated_at | date:'medium' }}
             </div>
             <div>
-                <span class="font-semibold">Location:</span> {{ garden.latitude }}, {{ garden.longitude }}
+                <span class="font-semibold">Emplacement:</span> {{ garden.latitude }}, {{ garden.longitude }}
             </div>
         </div>
 
