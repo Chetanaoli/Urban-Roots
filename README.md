@@ -1,61 +1,84 @@
 # UrbanRoots 🌱
 ![aboutImg](https://github.com/user-attachments/assets/840c8190-d207-44e1-abbe-670e319f461e)
 
-UrbanRoots is a community-driven platform that encourages urban gardening and sustainability. It allows users to create and manage gardens, share resources, and participate in discussions about eco-friendly practices. Built with Angular, Supabase, and Vercel, the platform promotes sustainable software development and green hosting.
+UrbanRoots est une plateforme communautaire qui encourage le jardinage urbain et la durabilité. Elle permet aux utilisateurs de créer et gérer des jardins, de partager des ressources et de participer à des discussions sur des pratiques respectueuses de l'environnement. Construite avec Angular, Supabase et Vercel, la plateforme promeut le développement logiciel durable et l'hébergement écologique.
 
-## Features ✨
+## Fonctionnalités ✨
 
-- **User Registration & Authentication**: Secure login with email using Supabase Auth.
-- **Create & Manage Gardens**: Users can create, edit, and manage their urban gardens.
-- **Resource Sharing**: Share and borrow gardening tools within the community.
-- **Community Forums**: Participate in discussions and share eco-friendly gardening tips.
-- **Real-Time Updates**: Stay updated with real-time notifications for new gardens, resources, and forum posts.
+- **Inscription & Authentification des Utilisateurs** : Connexion sécurisée par email via Supabase Auth.
+- **Création & Gestion de Jardins** : Les utilisateurs peuvent créer, modifier et gérer leurs jardins urbains.
+- **Partage de Ressources** : Partagez et empruntez des outils de jardinage au sein de la communauté.
+- **Forums Communautaires** : Participez à des discussions et partagez des conseils de jardinage écologique.
+- **Mises à Jour en Temps Réel** : Recevez des notifications en temps réel pour les nouveaux jardins, ressources et publications sur les forums.
 
-## Tech Stack 🛠️
+## Captures d'écran 📸
 
-- **Frontend**: Angular with lazy loading and optimized components for efficient performance.
-- **Backend**: Supabase (PostgreSQL, Auth, and Storage).
-- **Hosting**: Vercel, featuring edge computing and serverless functions for scalability and reduced environmental impact.
-- **Mapping**: OpenLayers for interactive garden mapping.
+### Page d'accueil
+![Page d'accueil](path_to_screenshot/homepage.png)
+*La page d'accueil d'UrbanRoots mettant en avant les principales fonctionnalités de la plateforme.*
 
-## Database Login:
-- For Login go to [Supabase](https://supabase.com/)
-- **ID**: projecturbanroots@gmail.com
-- **Password**: Projecturbanroots@2024
+### Gestion des Jardins
+![Gestion des Jardins](path_to_screenshot/garden_management.png)
+*Gestion des jardins au sein d'UrbanRoots.*
 
-## Sustainable Practices ♻️
+### Ressources
+![Ressources](path_to_screenshot/resources.png)
+*Les utilisateurs peuvent partager et emprunter des outils de jardinage dans la section Ressources.*
 
-- **Lazy Loading & Tree-Shaking**: Improves performance and reduces energy consumption.
-- **Green Hosting**: Vercel’s edge computing reduces server load and carbon emissions.
-- **Eco-Education**: Educational content on sustainable urban gardening practices.
+### Forum
+![Forum](path_to_screenshot/forum.png)
+*Forum communautaire où les utilisateurs échangent des conseils de jardinage écologique.*
+
+### Connexion Utilisateur
+![Connexion Utilisateur](path_to_screenshot/user_login.png)
+*Page de connexion utilisateur avec authentification sécurisée via Supabase.*
+
+
+## Technologies Utilisées 🛠️
+
+- **Frontend** : Angular avec chargement différé et composants optimisés pour une performance efficace.
+- **Backend** : Supabase (PostgreSQL, Auth et Stockage).
+- **Hébergement** : Vercel, avec des fonctions edge computing et serverless pour une évolutivité et un impact environnemental réduit.
+- **Cartographie** : OpenLayers pour la cartographie interactive des jardins.
+
+## Connexion à la Base de Données :
+- Pour vous connecter, rendez-vous sur [Supabase](https://supabase.com/)
+- **Identifiant** : projecturbanroots@gmail.com
+- **Mot de passe** : Projecturbanroots@2024
+
+## Pratiques Durables ♻️
+
+- **Chargement Différé & Optimisation du Code** : Améliore les performances et réduit la consommation d'énergie.
+- **Hébergement Vert** : Le edge computing de Vercel réduit la charge sur les serveurs et les émissions de carbone.
+- **Éco-Éducation** : Contenu éducatif sur les pratiques de jardinage urbain durable.
 
 ## Installation 🛠️
 
-To run the project locally:
+Pour exécuter le projet localement :
 
-1. **Clone the repository**:
+1. **Cloner le dépôt** :
     ```bash
     git clone https://github.com/Chetanaoli/Urban-Roots.git
     ```
 
-2. **Install dependencies**:
+2. **Installer les dépendances** :
     ```bash
     npm install
     ```
 
-3. **Configure Supabase**:
-   - Set up a Supabase project and configure environment variables for authentication and database connections.
+3. **Configurer Supabase** :
+   - Configurez un projet Supabase et configurez les variables d'environnement pour l'authentification et les connexions à la base de données.
 
-4. **Run the application**:
+4. **Exécuter l'application** :
     ```bash
     ng serve
     ```
 
-5. **Open in browser**:
-    - Navigate to `http://localhost:4200/`.
+5. **Ouvrir dans le navigateur** :
+    - Accédez à `http://localhost:4200/`.
 
 ---
 
 ## Contact 📧
 
-For any inquiries or feedback, reach out at **chetanaoli577@gmail.com**.
+Pour toute question ou retour, contactez-nous à **chetanaoli577@gmail.com**.
